@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Descubra se um número é par ou impar<br>1 até 20000</h1>
+    <input type="number" id="numero" placeholder="Escreva um número">
+    <input type="button" value="Ok" onclick="executar()">
+    <div id="res"></div>
+    <script>
+        function executar(){
+            var res = document.getElementById('res'),
+                numero = document.getElementById('numero'),
+                executar = document.getElementById(''),
+                n = Number(numero.value),
+                c = "i"
+
+            function contador(min,max){
+                min +=1
+                if(min<max){
+                    contador(++min,max)
+                    if(min == n){
+                        res.innerHTML = "Par"
+                        c = "p"  
+                    }else {
+                        res.innerHTML = "Impar"
+                        if(c == "p"){
+                            res.innerHTML = "Par"
+                        }
+                    }
+                }
+            }
+
+            if(n > 20000 || n <= 0 || n == ""){
+                alert("Digite um valor válido")
+            }else if(n == 1){
+                res.innerHTML = "Impar"
+            }else{
+                contador(0,n)
+                }
+            }
+            
+    </script>
+</body>
+</html>
